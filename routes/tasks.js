@@ -1,14 +1,10 @@
 import { Router } from 'express'
 
-import { tasks } from '../data/task-data.js'
+import * as tasksCtrl from '../controllers/tasks.js'
 
 const router = Router()
 
 // GET localhost:3000/tasks
-router.get('/', function(req, res) {
-  res.render('tasks/index', {
-    tasks: tasks
-  })
-})
+router.get('/', tasksCtrl.index)
 
 export { router }
