@@ -6,5 +6,6 @@ const router = Router()
 
 // GET localhost:3000/tasks
 router.get('/', tasksCtrl.index)
+router.get('/new', tasksCtrl.new)
 
 export { router }

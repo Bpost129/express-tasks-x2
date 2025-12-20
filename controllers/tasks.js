@@ -13,6 +13,12 @@ function index(req, res) {
   })
 }
 
+function newTask(req, res) {
+  res.render('tasks/new')
+}
+
 export {
   index,
+  newTask as new,
+  
 }
