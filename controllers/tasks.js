@@ -1,8 +1,15 @@
-import { tasks } from '../data/task-data.js'
+import { Task } from '../models/task.js'
 
 function index(req, res) {
-  res.render('tasks/index', {
-    tasks: tasks
+  Task.find({})
+  .then(tasks => {
+    res.render('tasks/index', {
+      tasks: tasks
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
 
