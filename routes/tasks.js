@@ -9,5 +9,6 @@ router.get('/', tasksCtrl.index)
 router.get('/new', tasksCtrl.new)
 router.get('/:taskId', tasksCtrl.show)
 router.post('/', tasksCtrl.create)
+router.delete('/:taskId', tasksCtrl.delete)
 
 export { router }

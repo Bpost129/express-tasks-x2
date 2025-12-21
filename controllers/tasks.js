@@ -44,10 +44,22 @@ function show(req, res) {
   })
 }
 
+function deleteTask(req, res) {
+  Task.findByIdAndDelete(req.params.taskId)
+  .then(task => {
+    res.redirect('/tasks')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/tasks')
+  })
+}
+
 export {
   index,
   newTask as new,
   create,
   show,
+  deleteTask as delete,
 
 }
