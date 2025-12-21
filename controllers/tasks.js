@@ -18,12 +18,21 @@ function newTask(req, res) {
 }
 
 function create(req, res) {
-
+  // console.log(req.body)
+  req.body.done = false
+  Task.create(req.body)
+  .then(task => {
+    res.redirect('/tasks')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/tasks')
+  })
 }
 
 export {
   index,
   newTask as new,
   create,
-  
+
 }
