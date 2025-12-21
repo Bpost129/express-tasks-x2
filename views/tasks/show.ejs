@@ -9,6 +9,7 @@
 <body>
   <h1>Tasks</h1>
   <h2>Task #<%= task._id %></h2>
+  <a href="/tasks/<%= task._id %>/edit">Update</a>
   <h3><%= task.text %></h3>
   <p>Complete: <%= task.done ? 'Yes' : 'No' %></p>
 	<a href="/tasks">Go back</a>
