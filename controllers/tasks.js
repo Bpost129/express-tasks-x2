@@ -64,7 +64,19 @@ function edit(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/tasks/:taskId')
+    res.redirect('/tasks')
+  })
+}
+
+function update(req, res) {
+  req.body.done = !!req.body.done
+  Task.findByIdAndUpdate(req.params.taskId, req.body, {new: true})
+  .then(task => {
+    res.redirect(`/tasks/${req.params.taskId}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/tasks')
   })
 }
 
@@ -75,5 +87,5 @@ export {
   show,
   deleteTask as delete,
   edit,
-
+  update,
 }

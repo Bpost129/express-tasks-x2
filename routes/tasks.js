@@ -11,5 +11,6 @@ router.get('/:taskId', tasksCtrl.show)
 router.get('/:taskId/edit', tasksCtrl.edit)
 router.post('/', tasksCtrl.create)
 router.delete('/:taskId', tasksCtrl.delete)
+router.put('/:taskId', tasksCtrl.update)
 
 export { router }
