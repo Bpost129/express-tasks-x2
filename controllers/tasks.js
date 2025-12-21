@@ -17,8 +17,13 @@ function newTask(req, res) {
   res.render('tasks/new')
 }
 
+function create(req, res) {
+
+}
+
 export {
   index,
   newTask as new,
+  create,
   
 }
