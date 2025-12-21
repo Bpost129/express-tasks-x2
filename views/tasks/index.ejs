@@ -13,7 +13,7 @@
   <ul>
     <% tasks.forEach(task => { %>
       <li>
-				<%= task.text %> 
+				<a href="/tasks/<%= task._id %>"><%= task.text %></a> 
 				- 
 				<%= task.done ? 'done' : 'not done' %>
 			</li>
