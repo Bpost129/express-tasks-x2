@@ -30,9 +30,23 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Task.findById(req.params.taskId)
+  .then(task => {
+    res.render('todos/show', {
+      task: task
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/tasks')
+  })
+}
+
 export {
   index,
   newTask as new,
   create,
+  show,
 
 }
