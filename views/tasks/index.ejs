@@ -13,6 +13,13 @@
   <ul>
     <% tasks.forEach(task => { %>
       <li>
+        <form action="/tasks/<%= task._id %>?_method=DELETE" 
+          class="delete-form"
+          method="POST"
+        >
+          <button type="submit">X</button>
+        </form>
+
 				<a href="/tasks/<%= task._id %>"><%= task.text %></a> 
 				- 
 				<%= task.done ? 'done' : 'not done' %>
