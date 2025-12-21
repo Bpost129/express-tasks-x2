@@ -5,6 +5,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import createError from 'http-errors'
 import logger from 'morgan'
+import methodOverride from 'method-override'
 
 // connect to the database with Mongoose
 import './config/database.js'
@@ -20,7 +21,7 @@ const app = express()
 app.set('view engine', 'ejs')
 
 app.use(function(req, res, next) {
-  console.log('Hello SEI!!')
+  // console.log('Hello SEI!!')
   req.time = new Date().toLocaleTimeString()
   next()
 })
