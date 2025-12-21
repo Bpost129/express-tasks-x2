@@ -4,7 +4,8 @@ function index(req, res) {
   Task.find({})
   .then(tasks => {
     res.render('tasks/index', {
-      tasks: tasks
+      tasks: tasks,
+      time: req.time
     })
   })
   .catch(err => {
