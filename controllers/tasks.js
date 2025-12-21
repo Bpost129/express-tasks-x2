@@ -55,11 +55,25 @@ function deleteTask(req, res) {
   })
 }
 
+function edit(req, res) {
+  Task.findById(req.params.taskId)
+  .then(task => {
+    res.render('tasks/edit', {
+      task: task
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/tasks/:taskId')
+  })
+}
+
 export {
   index,
   newTask as new,
   create,
   show,
   deleteTask as delete,
+  edit,
 
 }

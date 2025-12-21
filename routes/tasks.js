@@ -8,6 +8,7 @@ const router = Router()
 router.get('/', tasksCtrl.index)
 router.get('/new', tasksCtrl.new)
 router.get('/:taskId', tasksCtrl.show)
+router.get('/:taskId/edit', tasksCtrl.edit)
 router.post('/', tasksCtrl.create)
 router.delete('/:taskId', tasksCtrl.delete)
 
