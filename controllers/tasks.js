@@ -33,7 +33,7 @@ function create(req, res) {
 function show(req, res) {
   Task.findById(req.params.taskId)
   .then(task => {
-    res.render('todos/show', {
+    res.render('tasks/show', {
       task: task
     })
   })
